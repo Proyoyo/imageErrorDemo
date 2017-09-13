@@ -9,7 +9,8 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  Image
 } from 'react-native';
 
 export default class imageErrorDemo extends Component {
@@ -26,6 +27,14 @@ export default class imageErrorDemo extends Component {
           Press Cmd+R to reload,{'\n'}
           Cmd+D or shake for dev menu
         </Text>
+        <Image source={require('./assets/jakiro_full.png')} style={{width: 40, height: 40}}
+            onLoad = {(event) => {console.log("LOADED");}}
+            onError = {(event) => {console.log("ERROR");console.log(event);}}
+            />
+        <Image source={require('./assets/lich_full.png')} style={{width: 40, height: 40}}
+            onLoad = {(event) => {console.log("LOADED");}}
+            onError = {(event) => {console.log("ERROR");console.log(event);}}
+            />
       </View>
     );
   }
